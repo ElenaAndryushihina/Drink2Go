@@ -1,0 +1,114 @@
+.main-nav {
+  margin: 0;
+  display: flex;
+  position: relative;
+}
+
+.main-nav__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+@media (max-width: @mobile-width-only) {
+  .main-nav__wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .main-nav__toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 22px;
+    height: 22px;
+    background-color: red;
+    border: none;
+    z-index: 11;
+    cursor: pointer;
+  }
+
+  .main-nav--closed .main-nav__toggle::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 40px;
+    width: 16px;
+    height: 1.5px;
+    background-color: #333333;
+    box-shadow: 0 5px 0 0 #333333, 0 10px 0 0 #333333;
+  }
+
+  .main-nav--closed .main-nav__toggle:hover::before,
+  .main-nav--closed .main-nav__toggle:focus::before {
+    opacity: 0.6;
+  }
+
+  .main-nav--closed .main-nav__toggle:active::before {
+    background-color: fade(#333333, 30%);
+    box-shadow: 0 5px 0 0 fade(#333333, 30%), 0 10px 0 0 fade(#333333, 30%);
+  }
+
+  .main-nav--closed .site-list {
+    display: none;
+  }
+
+  .main-nav--opened .main-nav__toggle {
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 7px;
+      left: -2px;
+      width: 28px;
+      height: 1.5px;
+      background-color: #333333;
+    }
+
+    &::before {
+      transform: rotate(135deg);
+    }
+
+    &::after {
+      transform: rotate(45deg);
+    }
+
+    &:active::before,
+    &:active::after {
+      background-color: fade(#333333, 30%);
+    }
+  }
+
+  .main-nav--nojs .main-nav__toggle {
+    display: none;
+  }
+
+  .main-nav--nojs .site-list {
+    position: static;
+    min-height: 223px;
+  }
+
+  .main-nav--nojs .site-list__item {
+    display: block;
+  }
+
+  .main-nav--opened .site-list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    min-height: 223px;
+    background-color: #ffffff;
+  }
+
+  .main-nav--opened {
+    z-index: 12;
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .main-nav__toggle {
+    display: none;
+  }
+}

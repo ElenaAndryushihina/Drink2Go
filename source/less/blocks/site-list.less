@@ -1,0 +1,33 @@
+.site-list {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  list-style-type: none;
+  text-transform: uppercase;
+  color: #000000;
+  background-color: #ffffff;
+}
+
+.site-list a {
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  display: block;
+  text-decoration: none;
+  color: #333333;
+  padding: 20px 5px 21px;
+}
+
+@media (max-width: @mobile-width-only) {
+  .site-list {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .site-list {
+    display: flex;
+  }
+}
