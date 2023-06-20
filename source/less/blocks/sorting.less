@@ -1,3 +1,64 @@
 .sorting {
+  margin: 0 auto;
+  width: 320px;
+  background-color: #f8f8f8;
+}
+
+.sorting__wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
   margin: 0;
+}
+
+.sorting__label {
+  display: block;
+  margin: 0 0 0 23px;
+  padding: 0;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #333333;
+}
+
+.sorting__select {
+  display: block;
+  margin: 0 0 0 7px;
+  padding: 0;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #7859cf;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  max-width: 174px;
+}
+
+.sorting__button {
+  position: absolute;
+  top: 6px;
+  right: 16px;
+}
+
+@media (min-width: @tablet-width) {
+  .sorting {
+    width: 768px;
+  }
+
+  .sorting__wrapper {
+    justify-content: end;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .sorting {
+    width: 1011px;
+    grid-row: 1;
+    grid-column: 2;
+  }
 }

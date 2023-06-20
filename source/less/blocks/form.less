@@ -1,0 +1,29 @@
+.form {
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.form__fieldset {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 0 0 30px 0;
+  width: 280px;
+  border: none;
+}
+
+@media (min-width: @tablet-width) {
+  .form {
+    width: 768px;
+    flex-direction: row;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .form {
+    width: 318px;
+    flex-direction: column;
+  }
+}

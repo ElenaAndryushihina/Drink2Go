@@ -1,33 +1,81 @@
 .site-list {
-  margin: 0;
-  padding: 0;
+  display: flex;
+  flex-direction: column;
   text-align: center;
-  list-style-type: none;
   text-transform: uppercase;
   color: #000000;
   background-color: #ffffff;
+  width: 320px;
 }
 
 .site-list a {
+  display: block;
   font-family: "Montserrat", "Arial", sans-serif;
   font-size: 14px;
   font-weight: 500;
+  font-style: normal;
   line-height: 20px;
-  display: block;
+  letter-spacing: 0.02em;
   text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
   color: #333333;
-  padding: 20px 5px 21px;
-}
+  padding: 17px 22px 18px;
+  border-top: 1px solid #f0ebff;
 
-@media (max-width: @mobile-width-only) {
-  .site-list {
-    display: flex;
-    flex-direction: column;
+  &:hover {
+    color: #7859cf;
+  }
+
+  &:active {
+    color: #333333;
+    background-color: #f0ebff;
+  }
+
+  &:focus {
+    color: #7859cf;
   }
 }
 
 @media (min-width: @tablet-width) {
   .site-list {
-    display: flex;
+    width: 410px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 0;
+    left: 25%;
+  }
+
+  .site-list a {
+    padding: 30px 20px;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .site-list__item--current a {
+    border-bottom: 2px solid #7859cf;
+    color: #7859cf;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .site-list__item--current {
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #7859cf;
+    left: 450px;
+  }
+
+  .site-list {
+    top: 0;
+    left: 40%;
   }
 }

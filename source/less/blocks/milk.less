@@ -1,3 +1,71 @@
-.milk {
-  margin: 0;
+.milk__title {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #333333;
+  margin-bottom: 20px;
+  padding-top: 37px;
+}
+
+.milk__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.milk__item:last-child .milk__label {
+  color: #bdbdbd;
+}
+
+.milk__item:last-child .milk__mark-radio {
+  opacity: 0.5;
+}
+
+.milk__label {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #333333;
+  position: relative;
+  display: block;
+  min-height: 30px;
+  padding: 0 0 0 35px;
+  cursor: pointer;
+}
+
+.milk__label:hover .milk__mark-radio {
+  outline: 1px solid #7859cf;
+}
+
+.milk__label:disabled {
+  color: #bdbdbd;
+}
+
+.milk__input:checked + .milk__mark-radio {
+  opacity: 1;
+  outline: 2px solid #7859cf;
+}
+
+.milk__mark-radio {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 25px;
+  width: 24px;
+  height: 24px;
+  outline: 2px solid #bdbdbd;
+}
+
+.milk__input[type="radio"]:checked + .milk__mark-radio::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 16px;
+  height: 16px;
+  background-color: #7859cf;
+  border-radius: 50%;
 }

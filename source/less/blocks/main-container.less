@@ -1,3 +1,16 @@
-.main-conteiner {
-  margin: 0;
+.main-container {
+  width: 320px;
+  margin: 0 auto;
+}
+
+@media (min-width: @tablet-width) {
+  .main-container {
+    width: 768px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .main-container {
+    width: 1440px;
+  }
 }

@@ -1,0 +1,91 @@
+.filter {
+  width: 320px;
+  background-color: #f8f8f8;
+  padding: 50px 20px 60px 20px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.filter__inscription {
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #7859cf;
+  text-align: center;
+  margin: 0;
+}
+
+.filter__title {
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  text-align: center;
+  color: #333333;
+  margin: 0;
+  padding-top: 4px;
+}
+
+
+.filter__buttons {
+  margin: 0 auto;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+}
+
+.filter__buttons-button {
+  display: block;
+  border: none;
+
+  &--submit {
+    margin-bottom: 20px;
+  }
+
+  &--reset {
+    font-family: "Montserrat", "Arial", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 4px;
+    color: #7859cf;
+    background-color: #ffffff;
+    cursor: pointer;
+    padding: 8px;
+    margin: 0;
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .filter {
+    width: 768px;
+  }
+
+  .filter__title {
+    font-size: 42px;
+    line-height: 64px;
+    margin: 0;
+    padding-top: 4px;
+  }
+
+  .filter__buttons {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .filter {
+    padding: 0;
+    width: 318px;
+    grid-row: 1/2;
+    grid-column: 1;
+  }
+}

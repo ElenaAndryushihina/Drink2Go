@@ -1,38 +1,51 @@
 .main-nav {
+  width: 320px;
   margin: 0;
+  min-height: 60px;
   display: flex;
+  flex-direction: column;
   position: relative;
+  border-bottom: 1px solid #ebebeb;
+
+  &--open {
+    border-bottom: none;
+  }
 }
 
-.main-nav__list {
+.main-nav__wrapper {
+  display: flex;
+}
+
+.main-nav__logo {
+  display: inline-block;
+  height: 36px;
   margin: 0;
-  padding: 0;
-  list-style-type: none;
+  padding: 13px 20px;
+}
+
+.main-nav__logo img {
+  width: 100%;
+}
+
+.main-nav__logo img:hover,
+.main-nav__logo img:focus {
+  opacity: 0.6;
+}
+
+.main-nav__logo img:active {
+  opacity: 0.3;
+}
+
+.main-nav__logo span {
+  display: none;
 }
 
 @media (max-width: @mobile-width-only) {
-  .main-nav__wrapper {
-    display: flex;
-    flex-direction: row-reverse;
-  }
-
-  .main-nav__toggle {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 22px;
-    height: 22px;
-    background-color: red;
-    border: none;
-    z-index: 11;
-    cursor: pointer;
-  }
-
   .main-nav--closed .main-nav__toggle::before {
     content: "";
     position: absolute;
-    top: 10px;
-    left: 40px;
+    top: 23px;
+    left: 23px;
     width: 16px;
     height: 1.5px;
     background-color: #333333;
@@ -53,14 +66,31 @@
     display: none;
   }
 
+  .main-nav__toggle {
+    padding: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    background-color: #ffffff;
+    border: none;
+    z-index: 11;
+    cursor: pointer;
+  }
+
+  .main-nav__toggle:active {
+    background-color: #f0ebff;
+  }
+
   .main-nav--opened .main-nav__toggle {
     &::before,
     &::after {
       content: "";
       position: absolute;
-      top: 7px;
-      left: -2px;
-      width: 28px;
+      top: 30px;
+      left: 23px;
+      width: 15px;
       height: 1.5px;
       background-color: #333333;
     }
@@ -85,7 +115,7 @@
 
   .main-nav--nojs .site-list {
     position: static;
-    min-height: 223px;
+    min-height: 0;
   }
 
   .main-nav--nojs .site-list__item {
@@ -94,11 +124,11 @@
 
   .main-nav--opened .site-list {
     position: absolute;
-    top: 0;
+    top: 60px;
     left: 0;
     right: 0;
     z-index: 10;
-    min-height: 223px;
+    min-height: 0;
     background-color: #ffffff;
   }
 
@@ -108,7 +138,66 @@
 }
 
 @media (min-width: @tablet-width) {
+  .main-nav {
+    width: 768px;
+    align-self: center;
+    border-bottom: none;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .main-nav__logo {
+    padding: 0;
+  }
+
+  .main-nav__logo img {
+    display: block;
+    width: 82px;
+    height: 36px;
+    margin: 22px 20px;
+  }
+
   .main-nav__toggle {
     display: none;
+  }
+
+  .main-nav__wrapper {
+    display: grid;
+    grid-template-columns: 142px 446px 180px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .main-nav {
+    width: 1440px;
+  }
+
+  .main-nav__logo img {
+    width: 170px;
+    height: 36px;
+    margin: 22px 40px;
+  }
+
+  .main-nav__wrapper {
+    display: grid;
+    grid-template-columns: 396px 688px 356px;
+  }
+
+  .main-nav__logo {
+    position: relative;
+  }
+
+  .main-nav__logo span {
+    display: block;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #333333;
+    width: 126px;
+    position: absolute;
+    top: 24px;
+    left: 230px;
   }
 }
