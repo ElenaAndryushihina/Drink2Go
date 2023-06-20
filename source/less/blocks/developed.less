@@ -1,0 +1,59 @@
+.developed {
+  display: flex;
+  padding: 20px 0 30px;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.developed__link-wrapper {
+  position: relative;
+}
+
+.developed__link-wrapper svg {
+  position: absolute;
+  fill: #bdbdbd;
+}
+
+.developed__link {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #bdbdbd;
+  text-decoration: none;
+  padding: 0 56px 0 58px;
+}
+
+.developed__link svg {
+  width: 12px;
+  height: 16px;
+  margin-left: 4px;
+  fill: #bdbdbd;
+}
+
+.developed__link:hover {
+  color: #7859cf;
+}
+
+.developed__link:active {
+  color: #593cac;
+}
+
+.developed__link:hover svg,
+.developed__link:focus svg {
+  fill: #7859cf;
+}
+
+.developed__link:active svg {
+  fill: #593cac;
+}
+
+@media (min-width: @desktop-width) {
+  .developed {
+    grid-column: span 2;
+  }
+}

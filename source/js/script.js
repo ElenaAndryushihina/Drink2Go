@@ -1,6 +1,6 @@
 /* в этот файл добавляет скрипты*/
-let navMain = document.querySelector('.main-nav');
-let navToggle = document.querySelector('.main-nav__toggle');
+const navMain = document.querySelector('.main-nav');
+const navToggle = document.querySelector('.main-nav__toggle');
 
 navMain.classList.remove('main-nav--nojs');
 navMain.classList.add('main-nav--closed');
@@ -13,4 +13,19 @@ navToggle.addEventListener('click', function () {
     navMain.classList.add('main-nav--opened');
     navMain.classList.remove('main-nav--closed');
   }
+});
+
+const swiper = new Swiper('.swiper', {
+  direction: 'horizontal',
+  loop: true,
+
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
 });

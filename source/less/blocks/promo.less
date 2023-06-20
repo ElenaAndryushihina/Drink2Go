@@ -1,3 +1,326 @@
 .promo {
+  background-color: #f3ebe1;
+  position: relative;
+}
+
+.promo__list {
+  width: 320px;
+  display: flex;
+  margin: 0 auto;
+}
+
+.promo__card {
+  width: 320px;
+  min-height: 656px;
+  padding: 20px 0 0 0;
+
+  &--flat-white {
+    background-color: #f3ebe1;
+  }
+
+  &--lavender-latte {
+    background-color: #eae6fc;
+  }
+
+  &--espresso {
+    background-color: #e5e6e8;
+  }
+}
+
+.promo__card-wrapper {
+  align-items: center;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.promo__img {
+  width: 280px;
+  display: block;
+  margin: 0 auto;
+}
+
+.promo__inscription {
+  display: block;
+  margin: 0 auto;
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #7859cf;
+}
+
+.promo__title {
+  display: block;
+  width: 280px;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 48px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #333333;
+  padding: 4px 0 0 0;
+  margin: 0 auto;
+}
+
+.promo__description {
+  display: block;
+  width: 280px;
+  margin: 0 auto;
+  padding: 10px 0 0 0;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  color: #333333;
+}
+
+.promo__price {
+  margin: 0 auto;
+  padding: 20px 0 60px 0;
+  width: 280px;
+  display: flex;
+  justify-content: center;
+}
+
+.promo__old-price {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 32px;
+  text-decoration-line: line-through;
+  color: #7859cf;
+  margin: 0 10px 0 0;
+  padding: 0;
+}
+
+.promo__new-price {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 32px;
+  color: #333333;
+  margin: 0 20px 0 0;
+  padding: 0;
+}
+
+.promo__button {
   margin: 0;
+  padding: 8px 20px;
+}
+
+.promo__toggle-container {
+  width: 320px;
+  display: flex;
+}
+
+.promo__toggle-wrapper {
+  width: 20px;
+  height: 656px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.promo__toggle {
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 656px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  &--back {
+    top: -307px;
+    left: -10px;
+  }
+
+  &--forward {
+    top: -307px;
+    right: -10px;
+  }
+}
+
+.promo__toggle svg {
+  position: absolute;
+  top: 48%;
+  right: -5%;
+  fill: #7859cf;
+}
+
+.promo__toggle--back:hover,
+.promo__toggle--back:focus {
+  background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.promo__toggle--forward:hover,
+.promo__toggle--forward:focus {
+  background: linear-gradient(270deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.promo__toggle--back:active {
+  background: linear-gradient(90deg, rgba(120, 89, 207, 0.25) 0%, rgba(120, 89, 207, 0) 100%);
+}
+
+.promo__toggle--forward:active {
+  background: linear-gradient(270deg, rgba(120, 89, 207, 0.25) 0%, rgba(120, 89, 207, 0) 100%);
+}
+
+.promo__toggle--back:disabled svg,
+.promo__toggle--forward:disabled svg {
+  fill: #bdbdbd;
+}
+
+.promo__toggle-container .swiper-button-prev::after,
+.promo__toggle-container .swiper-button-next::after {
+  opacity: 0;
+}
+
+.promo__pagination {
+  display: none;
+}
+
+@media (min-width: @tablet-width) {
+  .promo__card-wrapper {
+    width: 768px;
+  }
+
+  .promo__card {
+    width: 768px;
+    min-height: 640px;
+  }
+
+  .promo__img {
+    width: 476px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    order: 5;
+    position: relative;
+  }
+
+  .promo__img img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    z-index: 11;
+  }
+
+  .promo__inscription {
+    padding-top: 40px;
+    font-family: inherit;
+    font-size: 12px;
+    line-height: 16px;
+    order: 1;
+  }
+
+  .promo__title {
+    width: 608px;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 80px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #333333;
+    order: 2;
+  }
+
+  .promo__description {
+    width: 608px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 32px;
+    order: 3;
+
+    & br {
+      display: none;
+    }
+  }
+
+  .promo__price {
+    width: 260px;
+    padding-bottom: 20px;
+    order: 4;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .promo__card {
+    width: 1440px;
+  }
+
+  .promo__card-wrapper {
+    width: 1440px;
+    display: grid;
+    grid-template-columns: 600px 625px;
+    column-gap: 30px;
+    justify-content: center;
+  }
+
+  .promo__img img {
+    position: relative;
+    top: 18px;
+    left: 0;
+  }
+
+  .promo__img {
+    grid-column: 1;
+    grid-row: 1/4;
+  }
+
+  .promo__pagination {
+    display: block;
+  }
+
+  .promo__pagination .swiper-pagination-bullet {
+    width: 62px;
+    height: 4px;
+    background-color: #ffffff;
+    border-radius: 0;
+    opacity: 1;
+
+    &-active {
+      background-color: #7859cf;
+    }
+  }
+
+  .promo__inscription,
+  .promo__title,
+  .promo__description,
+  .promo__price {
+    grid-column: 2;
+    text-align: left;
+  }
+
+  .promo__inscription {
+    grid-row-start: 1;
+  }
+
+  .promo__title {
+    grid-row: 2;
+  }
+
+  .promo__description {
+    grid-row-start: 3;
+  }
+
+  .promo__price {
+    grid-row-start: 4;
+  }
 }

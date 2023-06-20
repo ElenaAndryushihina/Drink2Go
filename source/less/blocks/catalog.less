@@ -1,3 +1,20 @@
 .catalog {
-  margin: 0;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto 0;
+  background-color: #f8f8f8;
+}
+
+@media (min-width: @tablet-width) {
+  .catalog {
+    max-width: 728px;
+    margin: 0 auto 60px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .catalog {
+    max-width: 1011px;
+  }
 }

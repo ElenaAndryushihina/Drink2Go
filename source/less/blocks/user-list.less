@@ -1,5 +1,9 @@
 .user-list {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+  width: 180px;
+  margin: 0 60px 0 auto;
 }
 
 .user-list__item a {
@@ -10,15 +14,39 @@
   display: block;
   text-decoration: none;
   color: #333333;
-  padding: 20px 5px 21px;
+  padding: 19.5px 22px;
 }
 
 .user-list__text {
   display: none;
 }
 
+@media (min-width: @tablet-width) {
+  .user-list {
+    margin: 0;
+    padding: 0 20px 0 0;
+    grid-column: 3/3;
+  }
+
+  .user-list__item a {
+    padding: 29px 22px;
+  }
+}
+
 @media (min-width: @desktop-width) {
+  .user-list {
+    width: 310px;
+  }
+
+  .user-list__item a {
+    padding: 29px 52px 29px 32px;
+    position: relative;
+  }
+
   .user-list__text {
     display: block;
+    position: absolute;
+    top: 35%;
+    left: 55px;
   }
 }
